@@ -3,5 +3,10 @@
   %head
     %meta{charset: "utf-8"}
   %body
+    - if @posts
+      - @posts.each do |p|
+        - if p.image.attached?
+          = image_tag p.image.variant(resize:'800x800').processed
+        = p.caption
     %h1 post
     = link_to "New Post", new_post_path

@@ -4,6 +4,6 @@
     %meta{charset: "utf-8"}
   %body
     %h1 show
-
-= image_tag @post.image.variant(resize:'800x800').processed
+- if @post.image.attached?
+  = image_tag @post.image.variant(resize:'800x800').processed
 = @post.caption

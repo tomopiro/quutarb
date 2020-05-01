@@ -1,0 +1,13 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %title Quuta
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    %a.navbar-brand{ :href => '/' } Quuta
+  %body
+    = yield
+  

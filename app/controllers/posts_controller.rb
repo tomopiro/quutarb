@@ -7,6 +7,7 @@ def new
 end
 def create
     @post = Post.create(post_params)
+    @post.user_id = current_user.id
     if @post.save
         flash[:success] = "Your post has been created."
         redirect_to @post

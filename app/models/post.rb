@@ -2,6 +2,8 @@ class Post < ApplicationRecord
     has_one_attached :image
     validate :image_type
 
+    belongs_to :user
+
     private
 
     def image_type

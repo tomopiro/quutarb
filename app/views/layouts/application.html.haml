@@ -6,8 +6,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %nav.navbar.navbar-expand-xl.navbar-light.bg-light
     %a.navbar-brand{ :href => '/' } Quuta
+    - if current_user
+      %p
+        = current_user.email
   %body
     = yield
   

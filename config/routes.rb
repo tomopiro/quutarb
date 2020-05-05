@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :posts
 
   root to: "public#index"
+
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 end

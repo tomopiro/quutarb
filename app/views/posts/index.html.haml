@@ -12,9 +12,11 @@
         = link_to "ユーザー登録", new_user_registration_path, class: "btn btn-outline-info"
 
     - if @posts
-      - @posts.each do |p|
-        - if p.image.attached?
-          = image_tag p.image.variant(resize:'800x800').processed
-        = p.caption
-        - if p.user != nil
-          = p.user.email
+      .row
+        - @posts.each do |p|
+          .col-md-4
+            - if p.image.attached?
+              = image_tag p.image.variant(resize:'800x800').processed, class: "img-fluid"
+            = p.caption
+            - if p.user != nil
+              = p.user.email
